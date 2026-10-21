@@ -5,7 +5,10 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -108,6 +111,24 @@ class MainActivity : AppCompatActivity() {
         data: MutableList<String>,
         adapter: ArrayAdapter<String>
     ){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Update Data")
+
+        val layout = LinearLayout(this)
+        layout.orientation = LinearLayout.VERTICAL
+        layout.setPadding(50, 40, 50, 10)
+
+
+        val tvOld = TextView(this)
+        tvOld.text = "Data lama: $oldValue"
+        tvOld.textSize = 16f
+
+        val etNew = EditText(this)
+        etNew.hint = "Masukkan data baru"
+        etNew.setText(oldValue)
+
+        layout.addView(tvOld)
+        layout.addView(etNew)
 
     }
 }
