@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             data
         )
         val _lv1 : ListView = findViewById<ListView>(R.id.lv1)
+        _lv1.adapter = lvAdapter
 
 
     }
