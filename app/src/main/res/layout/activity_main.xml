@@ -7,17 +7,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:weightSum="10">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv1" />
+        android:id="@+id/lv1"
+        android:layout_weight="9"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/btnTambah" />
+        android:id="@+id/btnTambah"
+        android:layout_weight="1"
+        android:text="Tambah Data"/>
 
 
 </LinearLayout>
