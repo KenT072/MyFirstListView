@@ -75,15 +75,20 @@ class MainActivity : AppCompatActivity() {
         selectedItem:String,
         data: MutableList<String>,
         adapter: ArrayAdapter<String>
-    ){
+    ) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("ITEM $selectedItem")
         builder.setMessage("Pilih tindakan yang ingin dilakukan:")
 
-        builder.setPositiveButton("Update"){_,_ ->
-
+        builder.setPositiveButton("Update") { _, _ ->
+            showUpdateDialog(
+                position,
+                selectedItem,
+                data,
+                adapter
+            )
         }
-        builder.setNegativeButton("Hapus"){_,_ ->
+        builder.setNegativeButton("Hapus") { _, _ ->
             data.removeAt(position)
             adapter.notifyDataSetChanged()
             Toast.makeText(
@@ -91,9 +96,18 @@ class MainActivity : AppCompatActivity() {
                 "Hapus Item #selectedItem",
                 Toast.LENGTH_SHORT
             ).show()
-    }
+        }
         builder.setNeutralButton("Batal") { dialog, _ ->
             dialog.dismiss()
         }
         builder.create().show()
+    }
+    private fun showUpdateDialog(
+        position:Int,
+        oldValue: String,
+        data: MutableList<String>,
+        adapter: ArrayAdapter<String>
+    ){
+
+    }
 }
