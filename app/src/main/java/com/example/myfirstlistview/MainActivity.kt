@@ -155,6 +155,9 @@ class MainActivity : AppCompatActivity() {
             dialog.dismiss()
         }
 
+        builder.setNegativeButton("Batal") { dialog, _ ->
+            dialog.dismiss()
+        }
 
     }
 }
