@@ -36,5 +36,7 @@ class MainActivity : AppCompatActivity() {
             var dtAkhir = Integer.parseInt(data.get(data.size - 1)) + 1
             data.add("$dtAkhir")
         }
+
+        lvAdapter.notifyDataSetChanged()
     }
 }
